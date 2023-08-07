@@ -12,7 +12,7 @@ interface IndexTree {
 
 // 目录标题去除utils.前缀
 function resolveTitle(title: string) {
-  return title === 'utils' ? title : title.replace('kzx_utils.', '')
+  return title === 'utils' ? title : title.replace('utils.', '')
 }
 
 // 将md文档列表转为树结构
@@ -60,13 +60,10 @@ const tree = fg.sync(['./doc/**/*.md'])
 
 const docs: DefaultTheme.SidebarItem[] = treeToItems(tree)
 
-
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'utils',
   description: '前端工具函数库',
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
       nav: [
           { text: '主页', link: '/doc/index' },
           { text: 'API', link: '/doc/utils' },
@@ -78,7 +75,7 @@ export default defineConfig({
           },
       ],
       socialLinks: [
-          { icon: 'github', link: 'https://github.com/taiyuuki/utils' },// 这里要替换成你自己的仓库地址
+          { icon: 'github', link: 'https://github.com/dorothyLee56/utils' },
       ],
 
       search: {

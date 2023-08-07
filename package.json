@@ -57,5 +57,13 @@
       "require": "./dist/cjs/index.js",
       "types": "./dist/types/index.d.ts"
     }
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+        "ignoreMissing": [
+            "@algolia/client-search",
+            "search-insights"
+        ]
+    }
   }
 }
