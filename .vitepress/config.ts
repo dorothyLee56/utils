@@ -60,17 +60,16 @@ const tree = fg.sync(['./doc/**/*.md'])
 
 const docs: DefaultTheme.SidebarItem[] = treeToItems(tree)
 
-console.log('docs', docs)
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'kzx_utils',
-  description: '快资讯工具函数库',
+  title: 'utils',
+  description: '前端工具函数库',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
       nav: [
           { text: '主页', link: '/doc/index' },
-          { text: 'API', link: '/doc/kzx_utils' },
+          { text: 'API', link: '/doc/utils' },
       ],
       sidebar: [
           {

@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@q/kzx\_utils](./kzx_utils.md) |  |
+|  [@q/utils](./utils.md) |  |
 

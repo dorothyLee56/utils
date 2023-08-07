@@ -20,35 +20,8 @@ function str_ensure_suffix(s: string, suffix: string) {
 }
 
 
-/**
- * 中文和全角为1个字符、英文和半角符号为0.5个字符计算，返回str的总长度
- * @param {String} str 字符串
- * @returns str的总长度
- */ 
-function strLength (str) {
-  let totalLength = 0;
-  let list = str.split('');
-  for (let i = 0; i < list.length; i++) {
-    let s = list[i];
-    
-    if (/[\u0000-\u00ff]/g.test(s)) { //半角
-      totalLength += 0.5;
-    }  else if (/[A-Za-z]/g.test(s)) { // 英文
-      totalLength += 0.5;
-    } else if (/[\u4e00-\u9fa5]/g.test(s)) { // 中文  
-      totalLength += 1;
-    } else if (/[\uff00-\uffff]/g.test(s)) {  // 全角 
-      totalLength += 1;
-    } else {
-      totalLength += 1;
-    }
-  }
-  return totalLength;
-}
-
 
 export {
   str_ensure_prefix,
   str_ensure_suffix,
-  strLength,
 }

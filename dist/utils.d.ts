@@ -22,6 +22,18 @@ export declare function classNames(...arg: any): string;
 export declare function formatDate(date: string | number | Date, format?: string): string;
 
 /**
+ * 函数“getEndOfCurrentDay”返回当天结束的时间戳。
+ * @returns 当日结束的时间戳。
+ */
+export declare function getEndOfCurrentDay(): number;
+
+/**
+ * 函数“getEndOfCurrentWeek”返回本周最后一天的时间戳。
+ * @returns 本周最后一天的时间戳，时间设置为 23:59:59.999。
+ */
+export declare function getEndOfCurrentWeek(): number;
+
+/**
  * 该函数检查给定值是否是有限数。
  * @param {any} n - 参数“n”可以是任何类型的值。
  * @returns 一个布尔值。
@@ -80,5 +92,14 @@ export declare function str_ensure_prefix(s: string, prefix: string): string;
  * @returns 函数“str_ensure_prefix”返回一个字符串。
  */
 export declare function str_ensure_suffix(s: string, suffix: string): string;
+
+/**
+ * 函数 `urlParamPass` 接受一个 URL 和一个参数名称数组，并将当前页面 URL 中的相应参数值附加到给定的 URL。
+ * @param {string} url - `url` 参数是一个字符串，表示您要通过向其附加查询参数来修改的 URL。
+ * @param {string[]} params - `params` 参数是一个可选的字符串数组。它表示您想要从当前 URL
+ * 传递到“url”参数的查询参数。如果未提供“params”，则默认为空数组。
+ * @returns 函数“urlParamPass”返回一个字符串。
+ */
+export declare const urlParamPass: (url: string, params?: string[]) => string;
 
 export { }

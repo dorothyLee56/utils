@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "utils"
-  text: "快资讯业务工具函数库"
+  text: "前端业务工具函数库"
   tagline: ''
   actions:
     - theme: brand

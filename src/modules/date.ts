@@ -1,8 +1,9 @@
+
 /**
- * 函数“getTodayEndTime”返回当天结束的时间戳。
- * @returns 函数“getTodayEndTime”返回当天结束的时间戳。
+ * 函数“getEndOfCurrentDay”返回当天结束的时间戳。
+ * @returns 当日结束的时间戳。
  */
-export const getEndOfCurrentDay = (): number => {
+function getEndOfCurrentDay () {
   const nowTime: number = Date.now();
   const year: number = new Date(nowTime).getFullYear();
   const month: number = new Date(nowTime).getMonth();
@@ -10,11 +11,12 @@ export const getEndOfCurrentDay = (): number => {
   return new Date(year, month, day + 1).getTime();
 };
 
+
 /**
- * 函数“getEndOfCurrentWeek”返回本周最后一毫秒的时间戳。
- * @returns 函数 getEndOfCurrentWeek 返回本周最后一天的时间戳，时间设置为 23:59:59.999。
+ * 函数“getEndOfCurrentWeek”返回本周最后一天的时间戳。
+ * @returns 本周最后一天的时间戳，时间设置为 23:59:59.999。
  */
-const getEndOfCurrentWeek = (): number => {
+function getEndOfCurrentWeek () {
   const now: Date = new Date();
   const dayOfWeek: number = now.getDay();
   const diff: number = dayOfWeek === 0 ? 6 : dayOfWeek - 1; // 0表示周日，所以如果是周日，则取6，否则减去1
@@ -76,7 +78,7 @@ function formatDate (
 
 export { 
   padLeft, 
-  formatDate
+  formatDate,
   getEndOfCurrentWeek, 
   getEndOfCurrentDay,
 }
