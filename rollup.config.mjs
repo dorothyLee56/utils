@@ -2,13 +2,16 @@ import { defineConfig } from 'rollup'
 import commonjs from '@rollup/plugin-commonjs'
 import babel from '@rollup/plugin-babel'
 import resolve from '@rollup/plugin-node-resolve'
+// 模拟 Node.js 全局变量在浏览器环境中的存在
 import globals from 'rollup-plugin-node-globals'
 // 自动为代码注入node内置模块的替代实现
 import builtins from 'rollup-plugin-node-builtins'
+// 
 import dts from 'rollup-plugin-dts'
 import ts from 'rollup-plugin-typescript2'
+// 代码压缩
 import terser from '@rollup/plugin-terser'
-// 
+// 模块自动导入并导出
 import { importExportPlugin } from 'rollup-plugin-import-export'
 
 const config = defineConfig([
