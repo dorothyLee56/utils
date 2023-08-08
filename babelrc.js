@@ -4,11 +4,9 @@
       "targets": "defaults",
       "useBuiltIns": "usage",
       "corejs": 3,
-      "modules": false,
-      "helpers": true
+      "modules": false
     }]
   ],
   "plugins": [],
-  "babelHelpers": "inline",
   "exclude": "node_modules/**"
 }
