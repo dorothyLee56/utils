@@ -63,6 +63,7 @@ const docs: DefaultTheme.SidebarItem[] = treeToItems(tree)
 export default defineConfig({
   title: 'utils',
   description: '前端工具函数库',
+  base: '/utils/',
   themeConfig: {
       nav: [
           { text: '主页', link: '/doc/index' },
