@@ -2,6 +2,7 @@
   "name": "@q/utils",
   "version": "1.0.0",
   "description": "前端工具库",
+  "packageManager": "pnpm@7.33.4",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
