@@ -174,12 +174,86 @@
       "members": [
         {
           "kind": "Function",
-          "canonicalReference": "@q/utils!arr_unique:function(1)",
+          "canonicalReference": "@q/utils!arrayChunk:function(1)",
           "docComment": "/**\n * 函数“arr_unique”接受一个数组作为输入，并返回一个删除了重复元素的新数组。\n *\n * @param arr - 参数“arr”是一个“T”类型的数组。\n *\n * @returns 函数“arr_unique”从输入数组“arr”返回唯一元素的数组。\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
-              "text": "declare function arr_unique<T>(arr: "
+              "text": "declare function arrayChunk<T>(array: "
+            },
+            {
+              "kind": "Content",
+              "text": "T[]"
+            },
+            {
+              "kind": "Content",
+              "text": ", chunkSize: "
+            },
+            {
+              "kind": "Content",
+              "text": "number"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "T[][]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/types/modules/array.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "array",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "chunkSize",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "arrayChunk"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@q/utils!arrUnique:function(1)",
+          "docComment": "/**\n * 函数“arr_unique”接受一个数组作为输入，并返回一个删除了重复元素的新数组。\n *\n * @param arr - 参数“arr”是一个“T”类型的数组。\n *\n * @returns 函数“arr_unique”从输入数组“arr”返回唯一元素的数组。\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare function arrUnique<T>(arr: "
             },
             {
               "kind": "Content",
@@ -228,7 +302,7 @@
               }
             }
           ],
-          "name": "arr_unique"
+          "name": "arrUnique"
         },
         {
           "kind": "Function",
@@ -274,6 +348,106 @@
             }
           ],
           "name": "classNames"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@q/utils!debounce:function(1)",
+          "docComment": "/**\n * “throttle”函数将给定函数的执行限制为每个指定的延迟周期执行一次。\n *\n * @param func - `func` 参数是一个函数，它接受任意数量的参数并且不返回任何内容。\n *\n * @param delay - “delay”参数是函数调用之间应该经过的时间量（以毫秒为单位）。\n *\n * @returns throttle 函数返回一个新函数，该函数包装了作为参数传递的原始函数。\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare function debounce<T extends "
+            },
+            {
+              "kind": "Content",
+              "text": "(...args: any[]) => void"
+            },
+            {
+              "kind": "Content",
+              "text": ">(func: "
+            },
+            {
+              "kind": "Content",
+              "text": "T"
+            },
+            {
+              "kind": "Content",
+              "text": ", delay: "
+            },
+            {
+              "kind": "Content",
+              "text": "number"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "(this: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThisParameterType",
+              "canonicalReference": "!ThisParameterType:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>, ...args: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Parameters",
+              "canonicalReference": "!Parameters:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>) => void"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/types/modules/perf.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 7,
+            "endIndex": 12
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "func",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "delay",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "debounce"
         },
         {
           "kind": "Function",
@@ -813,6 +987,106 @@
             }
           ],
           "name": "str_ensure_suffix"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@q/utils!throttle:function(1)",
+          "docComment": "/**\n * “throttle”函数将给定函数的执行限制为每个指定的延迟周期执行一次。\n *\n * @param func - `func` 参数是一个函数，它接受任意数量的参数并且不返回任何内容。\n *\n * @param delay - “delay”参数是函数调用之间应该经过的时间量（以毫秒为单位）。\n *\n * @returns throttle 函数返回一个新函数，该函数包装了作为参数传递的原始函数。\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "declare function throttle<T extends "
+            },
+            {
+              "kind": "Content",
+              "text": "(...args: any[]) => void"
+            },
+            {
+              "kind": "Content",
+              "text": ">(func: "
+            },
+            {
+              "kind": "Content",
+              "text": "T"
+            },
+            {
+              "kind": "Content",
+              "text": ", delay: "
+            },
+            {
+              "kind": "Content",
+              "text": "number"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "(this: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ThisParameterType",
+              "canonicalReference": "!ThisParameterType:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>, ...args: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Parameters",
+              "canonicalReference": "!Parameters:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>) => void"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "dist/types/modules/perf.d.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 7,
+            "endIndex": 12
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "func",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "delay",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "throttle"
         },
         {
           "kind": "Variable",

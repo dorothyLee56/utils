@@ -1,68 +1,38 @@
 /**
- * “throttle”函数将给定函数的执行限制在指定的时间间隔内。
- * @param func - `func` 参数是一个将被限制的函数。它可以接受任意数量的参数，由扩展运算符“...args:any[]”表示。该函数最多每“wait”毫秒调用一次。
- * @param wait - “wait”参数是函数调用之间等待的毫秒数。它确定连续调用节流函数之间的最小时间间隔。
- * @param options - `options` 参数是一个可选对象，可以包含两个属性：
- * @returns 正在返回函数“throttled”。
+ * “throttle”函数将给定函数的执行限制为每个指定的延迟周期执行一次。
+ * @param {T} func - `func` 参数是一个函数，它接受任意数量的参数并且不返回任何内容。
+ * @param {number} delay - “delay”参数是函数调用之间应该经过的时间量（以毫秒为单位）。
+ * @returns throttle 函数返回一个新函数，该函数包装了作为参数传递的原始函数。
  */
-function throttle(
-  func: (...args: any[]) => void,
-  wait: number,
-  options: ThrottleOptions = {}
-): (...args: any[]) => void {
-  let timeout: NodeJS.Timeout | null;
-  let previous = 0;
-
-  const { leading = true, trailing = true } = options;
-
-  const throttled = (...args: any[]) => {
-    const now = Date.now();
-    if (!previous && !leading) {
-      previous = now;
-    }
-    const remaining = wait - (now - previous);
-    if (remaining <= 0 || remaining > wait) {
-      if (timeout) {
-        clearTimeout(timeout);
-        timeout = null;
-      }
-      previous = now;
-      func(...args);
-    } else if (!timeout && trailing) {
-      timeout = setTimeout(() => {
-        previous = !leading ? 0 : Date.now();
-        timeout = null;
-        func(...args);
-      }, remaining);
+function throttle<T extends (...args: any[]) => void>(func: T, delay: number) {
+  let timer: NodeJS.Timeout | null = null;
+  return function(this: ThisParameterType<T>, ...args: Parameters<T>) {
+    if (!timer) {
+      func.apply(this, args);
+      timer = setTimeout(() => {
+        timer = null;
+      }, delay);
     }
   };
-
-  return throttled;
 }
 
-function debounce(
-  func: (...args: any[]) => void,
-  wait: number,
-  options: DebounceOptions = {}
-): (...args: any[]) => void {
-  let timeout: NodeJS.Timeout | null;
-
-  const { immediate = false } = options;
-
-  const debounced = (...args: any[]) => {
-    if (timeout) {
-      clearTimeout(timeout);
-    }
-    if (immediate && !timeout) {
-      func(...args);
-    }
-    timeout = setTimeout(() => {
-      if (!immediate) {
-        func(...args);
-      }
-      timeout = null;
-    }, wait);
+/**
+ * “throttle”函数将给定函数的执行限制为每个指定的延迟周期执行一次。
+ * @param {T} func - `func` 参数是一个函数，它接受任意数量的参数并且不返回任何内容。
+ * @param {number} delay - “delay”参数是函数调用之间应该经过的时间量（以毫秒为单位）。
+ * @returns throttle 函数返回一个新函数，该函数包装了作为参数传递的原始函数。
+ */
+function debounce<T extends (...args: any[]) => void>(func: T, delay: number) {
+  let timer: NodeJS.Timeout | null = null;
+  return function(this: ThisParameterType<T>, ...args: Parameters<T>) {
+    clearTimeout(timer!); // 加上 ! 表示我们知道 timer 不会为 null
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
   };
+}
 
-  return debounced;
+export {
+  debounce,
+  throttle
 }

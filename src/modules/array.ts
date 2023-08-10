@@ -15,7 +15,7 @@ function arrUnique<T>(arr: T[]): T[] {
  * @param arr - 参数“arr”是一个“T”类型的数组。
  * @returns 函数“arr_unique”从输入数组“arr”返回唯一元素的数组。
  */
-function chunkArray<T>(array: T[], chunkSize: number): T[][] {
+function arrayChunk<T>(array: T[], chunkSize: number): T[][] {
   const chunkedArray: T[][] = [];
   for (let i = 0; i < array.length; i += chunkSize) {
     const chunk = array.slice(i, i + chunkSize);
@@ -27,5 +27,5 @@ function chunkArray<T>(array: T[], chunkSize: number): T[][] {
 
 export {
   arrUnique,
-  chunkArray
+  arrayChunk
 }

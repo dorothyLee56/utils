@@ -8,8 +8,10 @@
 
 |  Function | Description |
 |  --- | --- |
-|  [arr\_unique(arr)](./utils.arr_unique.md) | 函数“arr\_unique”接受一个数组作为输入，并返回一个删除了重复元素的新数组。 |
+|  [arrayChunk(array, chunkSize)](./utils.arraychunk.md) | 函数“arr\_unique”接受一个数组作为输入，并返回一个删除了重复元素的新数组。 |
+|  [arrUnique(arr)](./utils.arrunique.md) | 函数“arr\_unique”接受一个数组作为输入，并返回一个删除了重复元素的新数组。 |
 |  [classNames(arg)](./utils.classnames.md) | “classNames”函数接受多个参数，并通过过滤掉任何非字符串参数并将任何对象的键与真实值连接起来，返回一个类名字符串。 |
+|  [debounce(func, delay)](./utils.debounce.md) | “throttle”函数将给定函数的执行限制为每个指定的延迟周期执行一次。 |
 |  [formatDate(date, format)](./utils.formatdate.md) | <code>padLeft</code> 函数在左侧填充指定字符或字符串的字符串或数字，直到达到指定长度。 |
 |  [getEndOfCurrentDay()](./utils.getendofcurrentday.md) | 函数“getEndOfCurrentDay”返回当天结束的时间戳。 |
 |  [getEndOfCurrentWeek()](./utils.getendofcurrentweek.md) | 函数“getEndOfCurrentWeek”返回本周最后一天的时间戳。 |
@@ -20,6 +22,7 @@
 |  [padLeft(value, num, pad)](./utils.padleft.md) | <code>padLeft</code> 函数在左侧填充指定字符或字符串的字符串或数字，直到达到指定长度。 |
 |  [str\_ensure\_prefix(s, prefix)](./utils.str_ensure_prefix.md) | 该函数确保给定的字符串具有指定的前缀。 |
 |  [str\_ensure\_suffix(s, suffix)](./utils.str_ensure_suffix.md) | 该函数确保给定的字符串具有指定的前缀。 |
+|  [throttle(func, delay)](./utils.throttle.md) | “throttle”函数将给定函数的执行限制为每个指定的延迟周期执行一次。 |
 
 ## Variables
 

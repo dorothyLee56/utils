@@ -5,10 +5,16 @@
 ```ts
 
 // @public
-export function arr_unique<T>(arr: T[]): T[];
+export function arrayChunk<T>(array: T[], chunkSize: number): T[][];
+
+// @public
+export function arrUnique<T>(arr: T[]): T[];
 
 // @public
 export function classNames(...arg: any): string;
+
+// @public
+export function debounce<T extends (...args: any[]) => void>(func: T, delay: number): (this: ThisParameterType<T>, ...args: Parameters<T>) => void;
 
 // @public
 export function formatDate(date: string | number | Date, format?: string): string;
@@ -39,6 +45,9 @@ export function str_ensure_prefix(s: string, prefix: string): string;
 
 // @public
 export function str_ensure_suffix(s: string, suffix: string): string;
+
+// @public
+export function throttle<T extends (...args: any[]) => void>(func: T, delay: number): (this: ThisParameterType<T>, ...args: Parameters<T>) => void;
 
 // @public
 export const urlParamPass: (url: string, params?: string[]) => string;
