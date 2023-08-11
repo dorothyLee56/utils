@@ -1,11 +1,12 @@
 {
-  "name": "@q/utils",
-  "version": "1.0.0",
+  "name": "@q/utils_demo",
+  "version": "1.0.1",
   "description": "前端工具库",
   "packageManager": "pnpm@7.33.4",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
+  "sideEffects": false, 
   "scripts": {
     "lint": "eslint --ext .js,.ts ./",
     "dev": "rollup -c --watch",
@@ -46,13 +47,14 @@
     "rollup-plugin-node-globals": "^1.4.0",
     "typescript": "^5.1.6",
     "vitepress": "1.0.0-beta.6",
-    "vue": "^3.3.4"
-  },
-  "dependencies": {
+    "vue": "^3.3.4",
     "rollup-plugin-typescript2": "^0.35.0"
   },
+  "dependencies": {
+  },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "exports": {
     ".": {
@@ -61,12 +63,10 @@
       "types": "./dist/types/index.d.ts"
     }
   },
-  "pnpm": {
-    "peerDependencyRules": {
-        "ignoreMissing": [
-            "@algolia/client-search",
-            "search-insights"
-        ]
+  "maintainers": [
+    {
+      "name": "dingyanping",
+      "email": "dingyanping@360.cn"
     }
-  }
+  ]
 }
