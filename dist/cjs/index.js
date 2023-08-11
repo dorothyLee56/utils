@@ -7,6 +7,7 @@ var is = require('./modules/is.js');
 var loadCss = require('./modules/loadCss.js');
 var loadScript = require('./modules/loadScript.js');
 var perf = require('./modules/perf.js');
+var sleep = require('./modules/sleep.js');
 var string = require('./modules/string.js');
 var url = require('./modules/url.js');
 
@@ -25,6 +26,7 @@ exports.loadCss = loadCss.loadCss;
 exports.loadScript = loadScript.loadScript;
 exports.debounce = perf.debounce;
 exports.throttle = perf.throttle;
+exports.delay = sleep.delay;
 exports.str_ensure_prefix = string.str_ensure_prefix;
 exports.str_ensure_suffix = string.str_ensure_suffix;
 exports.urlParamPass = url.urlParamPass;
