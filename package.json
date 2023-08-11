@@ -1,6 +1,6 @@
 {
   "name": "@q/utils_demo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "前端工具库",
   "packageManager": "pnpm@7.33.4",
   "main": "./dist/cjs/index.js",
